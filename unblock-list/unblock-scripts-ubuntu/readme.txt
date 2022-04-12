@@ -55,6 +55,11 @@ route-up /home/maxwell/unblock/unblock_route.sh
 route-up /etc/openvpn/unblock/unblock_route.sh
 route-pre-down /etc/openvpn/unblock/unblock_route.sh
 
+# systemd autostart
+add unblock-proton-ovpn.service
+to /etc/systemd/system/
+
+
 
 # useful commands:
 systemctl restart openvpn
@@ -71,7 +76,7 @@ mcedit /etc/iproute2/rt_tables
 # cron
 #centos 7
 mcedit /etc/crontab
-0 */12 * * * root /bin/bash --login /etc/openvpn/unblock/unblock_table.sh
+0 */12 * * * root /bin/bash --login /home/maxwell/unblock/unblock_table.sh
 
 
 # ip_route
