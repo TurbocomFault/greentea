@@ -1,0 +1,8 @@
+UNBLOCK_PATH="/etc/openvpn/unblock/"
+UNBLOCK_URL="https://raw.githubusercontent.com/TurbocomFault/greentea/master/unblock-list/unblock.txt"
+OVPN_DEV="tun0"
+TABLE_NUM=99
+TABLE_NAME="unblock"
+LOCAL_DNS="127.0.2.1"
+
+
