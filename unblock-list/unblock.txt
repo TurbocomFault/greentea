@@ -1,0 +1,68 @@
+####################
+### Tor checking
+####################
+check.torproject.org
+####################
+
+####################
+##### FQDN
+####################
+### Social
+vk.com
+#KP_Start
+kinopoisk.ru
+yadi.sk
+yandex.net
+yandex.ru
+yandex.ua
+yandexdatafactory.com
+yastatic.net
+#KP_End
+
+### Custom
+#2ip.ru
+
+### Torrents
+#rutracker.org
+#rutor.info
+#rutor.is
+#kinozal.tv
+#nnm-club.me
+#nnm-club.ws
+#tapochek.net
+#tparser.org
+#tparser.me
+#rustorka.com
+
+### Media
+#rezka.ag
+#hdrezka.ag
+#hdrezka.me
+#filmix.co
+#filmix.cc
+#seasonvar.ru
+
+### Books
+#lib.rus.ec
+#flibusta.is
+#flibs.me
+#flisland.net
+#flibusta.site
+
+### AV
+nod.kini24.ru
+
+####################
+### IP
+####################
+#195.82.146.214
+
+####################
+### CIDR
+####################
+#103.21.244.0/22
+
+####################
+### Range
+####################
+#100.100.100.200-100.100.100.210
