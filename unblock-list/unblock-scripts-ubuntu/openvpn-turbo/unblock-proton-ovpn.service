@@ -1,0 +1,15 @@
+[Unit]
+Description=Proton OpenVPN Unblock scripts
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/etc/openvpn
+ExecStart=/usr/sbin/openvpn --config /etc/openvpn/proton-openvpn.conf
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
