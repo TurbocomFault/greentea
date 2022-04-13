@@ -10,13 +10,13 @@ check.torproject.org
 ### Social
 vk.com
 #KP_Start
-kinopoisk.ru
+#kinopoisk.ru
 yadi.sk
 yandex.net
 yandex.ru
 yandex.ua
-yandexdatafactory.com
-yastatic.net
+#yandexdatafactory.com
+#yastatic.net
 #KP_End
 
 ### Custom
