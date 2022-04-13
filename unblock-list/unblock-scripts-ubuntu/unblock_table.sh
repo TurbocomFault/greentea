@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
 source /etc/openvpn/unblock/unblock-vars
 
 

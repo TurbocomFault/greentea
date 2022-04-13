@@ -7,6 +7,13 @@ yum install dnscrypt-proxy
 # configure ***servers: https://download.dnscrypt.info/dnscrypt-resolvers/v3/public-resolvers.md
 mcedit /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 server_names = ['cloudflare', 'google']
+server_names = ['google', 'cloudflare']
+
+*centos:
+listen_addresses = ['127.0.0.1:53', '127.0.2.1:53']
+dnscrypt_servers = true
+doh_servers = true
+require_dnssec = true
 
 # change default DNS address: 127.0.2.1
 mcedit /etc/systemd/system/sockets.target.wants/dnscrypt-proxy.socket
@@ -16,6 +23,10 @@ mcedit /etc/systemd/system/sockets.target.wants/dnscrypt-proxy.socket
 systemctl restart NetworkManager
 systemctl restart dnscrypt-proxy.socket
 dnscrypt-proxy -resolve google.com
+*centos:
+systemctl restart dnscrypt-proxy.service
+mcedit /etc/systemd/system/dnscrypt-proxy.service
+*After=network.target
 
 
 ## references:
@@ -45,13 +56,12 @@ auth-user-pass /etc/openvpn/proton-credentials
 
 route-nopull
 
-log /var/log/openvpn/openvpn.log
-status /etc/openvpn/openvpn-status.log
+log /var/log/openvpn/proton-openvpn.log
+status /etc/openvpn/unblock/proton-openvpn-status.log
 verb 3
 
 # Запуск скрипта при установке соединения и поднятии маршрутов
 script-security 2
-route-up /home/maxwell/unblock/unblock_route.sh
 route-up /etc/openvpn/unblock/unblock_route.sh
 route-pre-down /etc/openvpn/unblock/unblock_route.sh
 
@@ -62,10 +72,14 @@ to /etc/systemd/system/
 
 
 # useful commands:
-systemctl restart openvpn
 systemctl enable openvpn
+systemctl restart openvpn
+systemctl enable unblock-proton-ovpn
+systemctl restart unblock-proton-ovpn
 ifconfig tun0
 curl -s ipinfo.io
+ip route show table 99
+ip rule list
 
 ##########################
 ### routing
